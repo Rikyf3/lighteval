@@ -31,6 +31,7 @@ class GenerationParameters:
     frequency_penalty: Optional[float] = None  # vllm, tgi, sglang
     length_penalty: Optional[float] = None  # vllm, transformers
     presence_penalty: Optional[float] = None  # vllm, sglang
+    skip_special_tokens: Optional[bool] = None # vllm
 
     max_new_tokens: Optional[int] = None  # vllm, transformers, tgi, litellm, sglang
     min_new_tokens: Optional[int] = None  # vllm, transformers, sglang
@@ -116,6 +117,7 @@ class GenerationParameters:
             "max_new_tokens": "max_tokens",
             "min_new_tokens": "min_tokens",
             "stop_tokens": "stop",
+            "skip_special_tokens": "skip_special_tokens",
         }
 
         # Task specific sampling params to set in model: n, best_of, use_beam_search
